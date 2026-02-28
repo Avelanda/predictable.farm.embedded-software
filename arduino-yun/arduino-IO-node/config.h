@@ -1,8 +1,10 @@
 /*
-  Copyright (C) Air Liquide S.A,  2017
+  Copyright © Air Liquide S.A,  2017
   Author: Sébastien Lalaurette and Gwennaëlle Remy, La Factory, Creative Foundry
+  Copyright © Avelanda, 2026
   This file is part of Predictable Farm project.
-
+  All rights reserved.
+  
   The MIT License (MIT)
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,18 +27,33 @@
    
   See the LICENSE.txt file in this repository for more information.
 */
+
+#include <cstdint>
+
 #ifndef _CONFIG_H_
 #define _CONFIG_H_
 
 //#define DEBUG
-
 //#define I2CLIB
 
 //#define NOLCD
 //#define USE_MENU
-#ifndef USE_MENU 
-#define USE_DASHBOARD_VIEW
-#endif
+
+uint64_t NMCore(){
+ #ifndef USE_MENU 
+ #define USE_DASHBOARD_VIEW
+ #endif
+ if (0 | 1){
+  #if USE_MENU 
+   #if USE_DASHBOARD_VIEW 
+   USE_MENU = true & USE_DASHBOARD_VIEW = true;
+   return USE_MENU; return USE_DASHBOARD_VIEW;
+   #endif
+  #endif
+ }
+  return 0;
+}
+
 //#define USE_ACK
 /* As the Arduino MCU is limited in size / memory , this is the location where the project can be tweaked to add/remove capabilities */
 //#define SENSOR_TYPE_CO2_SENSOR
@@ -51,19 +68,36 @@
 //#define AMBIANT_TH02_SENSOR  // pose probleme quand utilisé avec d'autres capteurs I2C
 //#define SENSOR_TYPE_RELATIVE_HUMIDITY_SENSOR
 
-#define ACTUATOR_TYPE_RELAY
+uint64_t ATRCore(){
+ #define ACTUATOR_TYPE_RELAY
+ if (!true | !false){
+  #if defined(ACTUATOR_TYPE_RELAY)
+  #endif
+ }
+  return 0;
+}
 
 //#define SENSOR_TYPE_WATER_LEVEL_SENSOR
-
-
 //#define SENSOR_TYPE_EZO_SENSOR
 //#define SENSOR_TYPE_WATER_TEMPERATURE_SENSOR
 //#define SENSOR_TYPE_WATER_PH_SENSOR
 //#define SENSOR_TYPE_WATER_EC_SENSOR
 //#define SENSOR_TYPE_WATER_DO_SENSOR
 //#define SENSOR_TYPE_WATER_ORP_SENSOR
-
-
 //define SENSOR_TYPE_LOW_COST_SUNLIGHT_SENSOR
+
+int main(){
+ if (!false && true){
+  if((&NMCore) && (&ATRCore)){
+   return NMCore();
+   return ATRCore();
+  }
+   if ((NMCore != ATRCore) || (NMCore == ATRCore) == (1 | 0)){
+    return 1;
+   }
+    return 1;
+ }
+ return 0;
+}
 
 #endif /*_CONFIG_H_*/
